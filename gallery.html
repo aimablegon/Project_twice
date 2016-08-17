@@ -1,0 +1,1522 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Gallery</title>
+        <link rel="stylesheet" href="twice_font/font/flaticon.css" type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <style type="text/css">
+        @import url(https://fonts.googleapis.com/css?family=Oswald&subset=latin-ext);
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+        
+            *{margin:0; padding:0;}
+            html,body{height:100%;}
+            ul,ol{list-style:none;}
+            .wrapper{
+                height:100%;
+            }
+            
+            /*header*/
+            .wrapper .header{
+                height:100px; background-color:rgba(255,255,255,0.7);
+                position:absolute; width:100%; left:0; top:0; padding:0 20px; box-sizing:border-box;
+                box-shadow:0 1px 15px #AAA;
+            }
+            .wrapper .header .mark{
+                float:left;
+            }
+            
+            .wrapper .header .nav{
+                float:right;
+            }
+            
+            .wrapper .header .mark a{
+                display:block; width:104px; height:55px; padding:25px;
+                background-image:url(images/twice_logo.png);
+                background-repeat:no-repeat;
+                background-position:center;
+                transition:1s;
+            }
+            .wrapper .header .mark a:hover{
+                transform:rotateY(180deg);
+            }
+            
+            
+            .wrapper .header .nav button{
+                display:none;
+            }
+            .wrapper .header .nav ul{
+                font-size:0; z-index:10;
+            }
+            .wrapper .header .nav li{
+                display:inline-block; font-size:16px; 
+                vertical-align:top; line-height:100px;
+                font-family: 'Oswald', sans-serif;
+                
+            }
+            .wrapper .header .nav li a{
+                padding:0 10px; display:block; transition:0.3s; color:#08e9d1;
+                text-decoration:none; font-size:1.1em; 
+                font-family: 'Oswald', sans-serif;
+            }
+             .wrapper .header .nav li a:hover{
+                border-top:4px #ffb0b0 solid; color:#ffb0b0;
+            }
+            /*header 끝*/
+            
+           
+           
+            /*content*/
+            
+            #content{
+                width:100%; height:100%; margin-top:100px; padding:0 0 50px; position:relative;}
+            .gallery{
+                height:60px; margin:0 auto; padding:20px 0;
+                background-color: #f4f4f4;
+                background-image: url(images/gallery.png);
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            
+            
+            .contents{max-width:1000px;width:85%; padding:50px 0px; margin:0 auto; position:relative; }
+            
+            
+            
+            /*content 끝*/
+            
+           
+            /*footer*/
+            .footer_1{width:100%; height:57px; position:fixed; left:0; bottom:0;}
+            .footer_2{width:100%; height:57px; padding:0 30px; box-sizing:border-box;  -webkit-box-sizing:border-box;  -moz-box-sizing:border-box;-o-box-sizing:border-box;}
+            
+            .footer_left{width:115px; height:45px; float:left; position:relative; left:5%; margin:6px 0;}
+            .jyp_logo>img{width:100%;}
+            
+            
+            .footer_right{width: 233px;; height:33px; float:right; position:relative; right:5%; margin:13px 0 14px;}
+            .SNS{
+                width:32px; height:33px; margin-right:10px; text-decoration:none; display:inline-block;
+                font-size: 20px;    color: #000;    background: #FFF;    border-radius: 25%;
+            }
+            .insta{
+                background-image:url(images/insta.png);
+                background-repeat:no-repeat;
+                background-position:center;
+            }
+            .twitter{
+                background-image:url(images/twitter_bird.png);
+                 background-repeat:no-repeat;
+                background-position:center;
+            }
+            .facebook{
+                background-image:url(images/facebook.png);
+                 background-repeat:no-repeat;
+                background-position:center;
+            }
+            .youtube{
+                background-image:url(images/youtube.png);
+                 background-repeat:no-repeat;
+                background-position:center;
+            }
+            .cafe{
+                background-image:url(images/fans.png);
+                 background-repeat:no-repeat;
+                background-position:center;
+            }
+                
+            /*footer 끝*/
+            
+            
+            @media screen and (max-width:768px){
+               
+                /*header*/
+                .wrapper .header{
+                    height:55px; padding:0; background-color:#FFF;
+                }
+                .wrapper .header .mark a{
+                     padding:0; height:55px;
+                    transform:scale(0.7, 0.7)
+                }
+                .wrapper .header .mark a:hover{
+                    
+                    transform:scale(0.7, 0.7) rotateY(180deg);
+                }
+                .wrapper .header .nav button{
+                    display:block; width:180px; padding:17px 40px; border:0;
+                    color:#FFF; background-color:#08e9d1;
+                    text-decoration:none; font-size:0.95em; font-family: 'Oswald', sans-serif;
+                    cursor:pointer;
+                }
+                /*임시 시작*/
+                /*.wrapper .header .nav button:hover + ul{*/
+                /*    display:block;*/
+                /*}*/
+                /*임시끝*/
+                
+                .wrapper .header .nav ul{
+                    display:none; position:absolute; background-color:rgba(255, 255, 255, 0.8);
+                }
+                .wrapper .header .nav ul li{
+                    line-height:55px; text-indent:16px; padding-right:10px; width:100%;
+                }
+                 .wrapper .header .nav li a:hover{
+                    border-left:4px #08e9d1 solid; color:#ffb0b0;
+                    border-top:0; 
+                 }
+                /*header 끝*/
+                
+                
+                
+                
+                /*content 시작*/
+               
+               #content{margin-top:55px;}
+               .gallery{
+                   transition:1s;
+                   -webkit-background-size:230px; background-size:230px;
+               }
+               
+                /*content end*/
+                /*footer start*/
+                .footer_1{
+                    width:100%; 
+                    height:57px; 
+                    background-color:rgba(0,0,0,0.7); 
+                }
+                .SNS{
+                     background: #CCC;   color:#000;
+                }
+                .insta{
+                    background-image:url(images/insta.png);
+                    background-repeat:no-repeat;
+                    background-position:center;
+                }
+                .twitter{
+                    background-image:url(images/twitter_bird.png);
+                     background-repeat:no-repeat;
+                    background-position:center;
+                }
+                .facebook{
+                    background-image:url(images/facebook.png);
+                     background-repeat:no-repeat;
+                    background-position:center;
+                }
+                .youtube{
+                    background-image:url(images/youtube.png);
+                     background-repeat:no-repeat;
+                    background-position:center;
+                }
+                .cafe{
+                    background-image:url(images/fans.png);
+                     background-repeat:no-repeat;
+                    background-position:center;
+                }
+                 /*footer end*/
+                
+             }
+              @media screen and (max-width:479px){
+                /*header start*/
+                .wrapper .header{
+                    height:40px;
+                }
+                .wrapper .header .nav button{
+                    height:40px;
+                    padding:10px 40px;
+                    width:150px;
+                }
+               
+                 .wrapper .header .nav ul li {
+                    line-height: 37px;
+                    text-indent: 6px;
+                    padding-right: 10px;
+                    font-size:14px;
+                }
+               .wrapper .logo{
+                    position:relative; margin:0 auto; top:10%;
+                    transform:scale(1, 1);
+                    width: 250px;
+                    height: 250px;
+                    background-size: 70%;
+                    transition: all 1s ease;
+                    -o-transition: all 1s ease;
+                    -ms-transition: all 1s ease;
+                    -webkit-transition: all 1s ease;
+                    -moz-transition: all 1s ease;
+                    background-repeat:no-repeat;
+                    background-position: center;
+                }
+                .wrapper .header .mark a{
+                    width: 60px;
+                    height: 30px;
+                    padding: 0;
+                    background-position: center;
+                    background-size: cover;
+                    margin: 3px 0 0 10px;
+                    transform:scale(1 , 1);
+                }
+                 .wrapper .header .mark a:hover{
+                    transform:scale(1, 1) rotateY(180deg);
+                }
+                /*header end*/
+                /*content start*/
+                #content {
+                    margin-top: 40px;
+                }
+                .gallery {
+                    height: 50px;
+                    padding:0;
+                    background-size: 45%;
+                }
+                
+                
+
+                
+                /*footer start*/
+                .footer_1{
+                    width:100%; 
+                    height:37px; 
+                    background-color:rgba(0,0,0,0.7); 
+                }
+                .footer_right {
+                    width: 138px;
+                    height: 33px;
+                    float: right;
+                    position: relative;
+                    right:0;
+                    margin: 9px 0 14px;
+                }
+                .SNS{
+                     width:23px; height:23px; margin-right:0px; text-decoration:none; display:inline-block;
+                     font-size: 14px;    color: #000;    background: #FFF;    border-radius: 25%;
+                     background: #CCC;   color:#000; 
+                     background-size:95%; 
+                     background-repeat:no-repeat;
+                     background-position:center;
+                }
+                .insta{
+                    background-image:url(images/insta.png);
+                }
+                .twitter{
+                    background-image:url(images/twitter_bird.png);
+                }
+                .facebook{
+                    background-image:url(images/facebook.png);
+                }
+                .youtube{
+                    background-image:url(images/youtube.png);
+                }
+                .cafe{
+                    background-image:url(images/fans.png);
+                }
+                .footer_left{
+                    width: 67px;
+                    height: 45px;
+                    float: left;
+                    position: relative;
+                    left: 0%;
+                    margin: 8px 0;
+                    
+                }
+            }
+            
+            
+             
+        </style>
+        
+        
+        
+        
+        <script>
+            $(function(){
+                $('.nav>button').click(function(){
+                    $(this).next('ul').slideToggle(1000)
+                })
+                
+                $(window).resize(function(){
+                    if($(this).width() < 768){
+                        $('.nav ul').css('display','none');
+                    }else if($(this).width()>767){
+                        $('.nav ul').css('display','block')
+                    }
+                })
+                
+                
+            })
+            
+            
+        </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            
+            <div class="header">
+                <div class="mark">
+                    <a href="index.html"></a>
+                </div>
+                <div class="nav">
+                    <button>Main Menu</button>
+                    <ul>
+                        <li>
+                            <a href="profile.html">PROFILE</a>
+                        </li>
+                        <li>
+                            <a href="discography.html">DISCOGRAPHY</a>
+                        </li>
+                        <li>
+                            <a href="gallery.html">GALLERY</a>
+                        </li>
+                        <li>
+                            <a href="video.html">VIDEO</a>
+                        </li>
+                        <li>
+                            <a href="notice.html">NOTICE</a>
+                        </li>
+                        <li>
+                            <a href="schedule.html">SCHEDULE</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            
+            
+            <div id="content">
+                <div class="gallery"></div>
+                    
+                <div class="contents">
+                    <div class="photo_box">
+                        
+                        <div class="photos">
+                            <ul class="list_a">
+                                <li>
+                                    <a href="http://az879543.vo.msecnd.net/twice/4-004(9).jpg">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://az879543.vo.msecnd.net/twice/3-003(11).jpg">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://az879543.vo.msecnd.net/twice/2-002(9).jpg">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://az879543.vo.msecnd.net/twice/1-001(10).jpg">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://az879543.vo.msecnd.net/twice/6-001.jpg">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://az879543.vo.msecnd.net/twice/5-006.jpg">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://az879543.vo.msecnd.net/twice/4-005.jpg">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://az879543.vo.msecnd.net/twice/3-004.jpg">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/2-003.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/1-002.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/10-010(4).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/9-009(4).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/8-008(5).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/7-007(6).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/6-006(6).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/5-005(8).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/4-004(8).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/3-003(10).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/3-003(9).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/2-002(8).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/1-001(9).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/13-013(2).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/12-012(2).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/11-011(2).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/10-010(3).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/9-009(3).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/8-008(4).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/6-006(5).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/5-005(7).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/4-004(7).jpg"></a></li>
+                            </ul>
+                            <ul class="list_b">
+                                <li><a href="http://az879543.vo.msecnd.net/twice/3-003(8).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/2-002(7).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/1-001(8).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/5-005(6).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/4-004(6).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/3-003(6).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/2-002(6).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/1-001(7).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/7-007(5).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/6-006(4).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/5-005(5).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/4-004(4).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/3-003(5).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/2-002(5).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/1-001(6).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/10-010(2).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/9-009(2).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/8-008(3).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/7-007(3).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/6-006(3).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/5-005(4).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/4-004(3).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/3-003(3).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/2-002(2).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/1-001(2).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/14-014(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/13-013(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/12-012(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/11-011(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/10-010(1).jpg"></a></li>
+                            </ul>
+                            <ul class="list_c">
+                                <li><a href="http://az879543.vo.msecnd.net/twice/9-009(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/8-008(2).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/7-007(2).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/6-006(2).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/5-005(3).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/4-004(2).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/3-003(2).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/2-002(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/1-001(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/CkaagyiWYAIB7Wg-001.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/8-008(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/7-007(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/6-006(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/5-005(2).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/4-004(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/3-003(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/2-002.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/1-001.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/178-175.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/177-174.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/176-173.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/175-172.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/174-171.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/173-170.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/172-169.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/171-168.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/170-167.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/169-166.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/168-165.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/167-164.jpg"></a></li>
+                            </ul>
+                            <ul class="list_d">
+                                <li><a href="http://az879543.vo.msecnd.net/twice/166-163.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/165-162.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/164-161.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/163-160.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/162-159.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/161-158.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/160-157.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/159-156.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/158-155.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/157-154.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/156-153.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/154-152.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/153-151.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/152-150.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/151-149.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/150-148.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/149-147.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/148-146.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/147-145.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/146-144.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/145-143.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/144-142.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/143-141.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/142-140.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/141-139.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/140-138.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/138-137.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/137-136.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/136-135.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/135-134.jpg"></a></li>
+                            </ul>
+                            <ul class="list_e">
+                                <li><a href="http://az879543.vo.msecnd.net/twice/132-131.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/131-130.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/130-129.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/129-128.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/128-127.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/127-126.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/126-125.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/125-124.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/124-123.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/123-122.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/122-121.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/121-120.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/120-119.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/119-118.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/118-117.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/117-116.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/116-115.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/115-114.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/114-113.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/113-112.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/112-111.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/111-110.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/110-109.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/109-108.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/108-107.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/107-106.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/106-105.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/105-104.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/104-103.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/103-102.jpg"></a></li>
+                            </ul>
+                            <ul class="list_f">
+                                <li><a href="http://az879543.vo.msecnd.net/twice/102-101.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/101-100.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/100-099.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/99-098.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/98-097.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/97-096.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/96-095.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/95-094.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/94-093.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/93-092.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/92-091.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/91-090.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/90-089.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/89-088.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/88-087.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/87-086.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/86-085.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/85-084.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/83-083.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/82-082.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/81-081.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/80-080.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/79-079.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/78-078.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/77-077.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/76-076.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/75-075.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/74-074.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/73-073.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/72-072.jpg"></a></li>
+                            </ul>
+                            <ul class="list_g">
+                                <li><a href="http://az879543.vo.msecnd.net/twice/71-071.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/70-070.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/69-069.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/68-068.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/67-067.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/66-066.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/65-065.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/64-064.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/63-063.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/62-062.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/61-061.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/60-060.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/59-059.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/58-058.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/57-057.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/56-056.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/55-055.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/54-054.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/53-053.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/52-052.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/51-051.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/50-050.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/49-049.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/48-048.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/47-047.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/46-046.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/45-045.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/44-044.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/43-043.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/42-042.jpg"></a></li>
+                            </ul>
+                            <ul class="list_h">
+                                <li><a href="http://az879543.vo.msecnd.net/twice/41-041.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/40-040.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/39-039.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/38-038.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/37-037.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/36-036.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/35-035.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/34-034.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/33-033.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/32-032.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/31-031.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/30-030.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/29-029.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/28-028.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/27-027.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/26-026.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/25-025.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/24-024.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/21-021.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/20-020.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/19-019.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/17-017.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/16-016.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/15-015.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/14-014.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/13-013.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/12-012.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/11-011.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/10-010.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/9-009.jpg"></a></li>
+                            </ul>
+                            <ul class="list_i">
+                                <li><a href="http://az879543.vo.msecnd.net/twice/8-008.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/7-007.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/6-006.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/5-005(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/5-005.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/4-004.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/3-003.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/2(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/1(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/gallery_160225122417(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/gallery_16022512241(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/gallery_160225122348.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/gallery_160225122333(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/gallery_160225122317(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/gallery_16022512234(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/gallery_160225122249(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/gallery_160225122220(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/gallery_16022512220(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/gallery_160225122145.jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/gallery_160225122128(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/gallery_160225122114(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/gallery_160225122058(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/gallery_160225122043(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/gallery_160225122029(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/gallery_16022512201(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/gallery_160225121947(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/gallery_160225121930(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/gallery_160225121914(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/gallery_16022512191(1).jpg"></a></li>
+                                <li><a href="http://az879543.vo.msecnd.net/twice/gallery_160225121845(1).jpg"></a></li>
+                            </ul>
+                            <ul class="list_j">
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="list_k">
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="list_l">
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="list_m">
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="list_n">
+                                <li>
+                                    <a href="">
+                                        <img src="http://az879543.vo.msecnd.net/twice/gallery_151116153412(1).jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://az879543.vo.msecnd.net/twice/gallery_151116153344(1).jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://az879543.vo.msecnd.net/twice/gallery_151116153232(1).jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://az879543.vo.msecnd.net/twice/gallery_15111615327(1).jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://az879543.vo.msecnd.net/twice/gallery_151116153147(1).jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://az879543.vo.msecnd.net/twice/gallery_151116153116(1).jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://az879543.vo.msecnd.net/twice/gallery_151116152919(1).jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://az879543.vo.msecnd.net/twice/gallery_151116152859(1).jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://az879543.vo.msecnd.net/twice/gallery_151116152837(1).jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://az879543.vo.msecnd.net/twice/gallery_151116152758(1).jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://az879543.vo.msecnd.net/twice/gallery_151116152533(1).jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://az879543.vo.msecnd.net/twice/gallery_151116152338(1).jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://az879543.vo.msecnd.net/twice/gallery_151019143930(1).jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://az879543.vo.msecnd.net/twice/gallery_151019143918(1).jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://az879543.vo.msecnd.net/twice/gallery_15101914395(1).jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://az879543.vo.msecnd.net/twice/gallery_151019143844(1).jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://az879543.vo.msecnd.net/twice/gallery_151019143826(1).jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://az879543.vo.msecnd.net/twice/gallery_151019143813(1).jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://az879543.vo.msecnd.net/twice/gallery_151019143759(1).jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://az879543.vo.msecnd.net/twice/gallery_151019143744(1).jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://az879543.vo.msecnd.net/twice/gallery_151019143730(1).jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://az879543.vo.msecnd.net/twice/gallery_151019143715(1).jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://az879543.vo.msecnd.net/twice/gallery_151019143659(1).jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://az879543.vo.msecnd.net/twice/gallery_151019143642(1).jpg" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        
+                        
+                        
+                        <div class="list_button">
+                            <a href="">
+                                <img src="images/button-on.png"></img>
+                            </a>
+                            <a href="">
+                                <img src="images/button-off.png"></img>
+                            </a>
+                            <a href="">
+                                <img src="images/button-off.png"></img>
+                            </a>
+                            <a href="">
+                                <img src="images/button-off.png"></img>
+                            </a>
+                            <a href="">
+                                <img src="images/button-off.png"></img>
+                            </a>
+                            <a href="">
+                                <img src="images/button-off.png"></img>
+                            </a>
+                            <a href="">
+                                <img src="images/button-off.png"></img>
+                            </a>
+                            <a href="">
+                                <img src="images/button-off.png"></img>
+                            </a>
+                            <a href="">
+                                <img src="images/button-off.png"></img>
+                            </a>
+                            <a href="">
+                                <img src="images/button-off.png"></img>
+                            </a>
+                            <a href="">
+                                <img src="images/button-off.png"></img>
+                            </a>
+                            <a href="">
+                                <img src="images/button-off.png"></img>
+                            </a>
+                            <a href="">
+                                <img src="images/button-off.png"></img>
+                            </a>
+                            <a href="">
+                                <img src="images/button-off.png"></img>
+                            </a>
+                        </div>
+                        
+                    </div>
+                    
+                </div>    
+                
+            </div>
+            
+             <div class="footer_1">
+                <div class="footer_2">
+                    <span class="footer_left">
+                        <a href="http://www.jype.com/" class="jyp_logo">
+                            <img src="images/jyplogo-b.png" alt="제이와이피엔터테이먼트로고" />
+                        </a>
+                    </span>
+                    
+                    <span class="footer_right">
+                        <a href="https://www.instagram.com/twicetagram/" class="SNS insta">
+                        </a>
+                        <a href="https://twitter.com/JYPETWICE" class="SNS twitter">
+                        </a>
+                        <a href="https://www.facebook.com/JYPETWICE" class="SNS facebook">
+                        </a>
+                        <a href="https://www.youtube.com/c/jypentertainment" class="SNS youtube">
+                        </a>
+                        <a href="http://fans.jype.com/Portal" class="SNS cafe">
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
