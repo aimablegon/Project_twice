@@ -9,14 +9,14 @@
         <style type="text/css">
         @import url(https://fonts.googleapis.com/css?family=Oswald&subset=latin-ext);
         @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-        
+
             *{margin:0; padding:0;}
             html,body{height:100%;}
             ul,ol{list-style:none;}
             .wrapper{
                 height:100%;
             }
-            
+
             /*header*/
             .wrapper .header{
                 height:100px; background-color:rgba(255,255,255,0.7);
@@ -26,11 +26,11 @@
             .wrapper .header .mark{
                 float:left;
             }
-            
+
             .wrapper .header .nav{
                 float:right;
             }
-            
+
             .wrapper .header .mark a{
                 display:block; width:104px; height:55px; padding:25px;
                 background-image:url(images/twice_logo.png);
@@ -41,8 +41,8 @@
             .wrapper .header .mark a:hover{
                 transform:rotateY(180deg);
             }
-            
-            
+
+
             .wrapper .header .nav button{
                 display:none;
             }
@@ -50,25 +50,25 @@
                 font-size:0; z-index:10;
             }
             .wrapper .header .nav li{
-                display:inline-block; font-size:16px; 
+                display:inline-block; font-size:16px;
                 vertical-align:top; line-height:100px;
                 font-family: 'Oswald', sans-serif;
-                
+
             }
             .wrapper .header .nav li a{
                 padding:0 10px; display:block; transition:0.3s; color:#08e9d1;
-                text-decoration:none; font-size:1.1em; 
+                text-decoration:none; font-size:1.1em;
                 font-family: 'Oswald', sans-serif;
             }
              .wrapper .header .nav li a:hover{
                 border-top:4px #ffb0b0 solid; color:#ffb0b0;
             }
             /*header 끝*/
-            
-           
-           
+
+
+
             /*content*/
-            
+
             #content{
                 width:100%; height:100%; margin-top:100px; padding:0 0 50px; position:relative;}
             .notice{
@@ -78,27 +78,27 @@
                 background-repeat: no-repeat;
                 background-position: center;
             }
-            
-            
+
+
             .contents{max-width:1000px;width:85%; padding:50px 0px; margin:0 auto; position:relative; }
-            
-            
-            
+
+
+
             /*content 끝*/
-            
-           
+
+
             /*footer*/
             .footer_1{width:100%; height:57px; position:fixed; left:0; bottom:0;}
             .footer_2{width:100%; height:57px; padding:0 30px; box-sizing:border-box;  -webkit-box-sizing:border-box;  -moz-box-sizing:border-box;-o-box-sizing:border-box;}
-            
+
             .footer_left{width:115px; height:45px; float:left; position:relative; left:5%; margin:6px 0;}
             .jyp_logo>img{width:100%;}
-            
-            
-            .footer_right{width: 233px;; height:33px; float:right; position:relative; right:5%; margin:13px 0 14px;}
+
+
+            .footer_right{width: 210px;; height:33px; float:right; position:relative; margin:13px 0 14px;}
             .SNS{
-                width:32px; height:33px; margin-right:10px; text-decoration:none; display:inline-block;
-                font-size: 20px;    color: #000;    background: #FFF;    border-radius: 25%;
+                width:32px; height:33px; margin-right:5px; text-decoration:none; display:inline-block;
+                font-size: 20px;    color: #000;    background-color: #e4e4e4;    border-radius: 25%;
             }
             .insta{
                 background-image:url(images/insta.png);
@@ -125,12 +125,12 @@
                  background-repeat:no-repeat;
                 background-position:center;
             }
-                
+
             /*footer 끝*/
-            
-            
+
+
             @media screen and (max-width:768px){
-               
+
                 /*header*/
                 .wrapper .header{
                     height:55px; padding:0; background-color:#FFF;
@@ -140,7 +140,7 @@
                     transform:scale(0.7, 0.7)
                 }
                 .wrapper .header .mark a:hover{
-                    
+
                     transform:scale(0.7, 0.7) rotateY(180deg);
                 }
                 .wrapper .header .nav button{
@@ -154,7 +154,7 @@
                 /*    display:block;*/
                 /*}*/
                 /*임시끝*/
-                
+
                 .wrapper .header .nav ul{
                     display:none; position:absolute; background-color:rgba(255, 255, 255, 0.8);
                 }
@@ -163,27 +163,27 @@
                 }
                  .wrapper .header .nav li a:hover{
                     border-left:4px #08e9d1 solid; color:#ffb0b0;
-                    border-top:0; 
+                    border-top:0;
                  }
                 /*header 끝*/
-                
-                
-                
-                
+
+
+
+
                 /*content 시작*/
-               
+
                #content{margin-top:55px;}
                .notice{
                    transition:1s;
                    -webkit-background-size:230px; background-size:230px;
                }
-               
+
                 /*content end*/
                 /*footer start*/
                 .footer_1{
-                    width:100%; 
-                    height:57px; 
-                    background-color:rgba(0,0,0,0.7); 
+                    width:100%;
+                    height:57px;
+                    background-color:rgba(0,0,0,0.7);
                 }
                 .SNS{
                      background: #CCC;   color:#000;
@@ -214,7 +214,7 @@
                     background-position:center;
                 }
                  /*footer end*/
-                
+
              }
               @media screen and (max-width:479px){
                 /*header start*/
@@ -226,7 +226,7 @@
                     padding:10px 40px;
                     width:150px;
                 }
-               
+
                  .wrapper .header .nav ul li {
                     line-height: 37px;
                     text-indent: 6px;
@@ -269,15 +269,15 @@
                     padding:0;
                     background-size: 45%;
                 }
-                
-                
 
-                
+
+
+
                 /*footer start*/
                 .footer_1{
-                    width:100%; 
-                    height:37px; 
-                    background-color:rgba(0,0,0,0.7); 
+                    width:100%;
+                    height:37px;
+                    background-color:rgba(0,0,0,0.7);
                 }
                 .footer_right {
                     width: 138px;
@@ -290,8 +290,8 @@
                 .SNS{
                      width:23px; height:23px; margin-right:0px; text-decoration:none; display:inline-block;
                      font-size: 14px;    color: #000;    background: #FFF;    border-radius: 25%;
-                     background: #CCC;   color:#000; 
-                     background-size:95%; 
+                     background: #CCC;   color:#000;
+                     background-size:95%;
                      background-repeat:no-repeat;
                      background-position:center;
                 }
@@ -317,23 +317,23 @@
                     position: relative;
                     left: 0%;
                     margin: 8px 0;
-                    
+
                 }
             }
-            
-            
-             
+
+
+
         </style>
-        
-        
-        
-        
+
+
+
+
         <script>
             $(function(){
                 $('.nav>button').click(function(){
                     $(this).next('ul').slideToggle(1000)
                 })
-                
+
                 $(window).resize(function(){
                     if($(this).width() < 768){
                         $('.nav ul').css('display','none');
@@ -341,16 +341,16 @@
                         $('.nav ul').css('display','block')
                     }
                 })
-                
-                
+
+
             })
-            
-            
+
+
         </script>
     </head>
     <body>
         <div class="wrapper">
-            
+
             <div class="header">
                 <div class="mark">
                     <a href="index.html"></a>
@@ -379,23 +379,23 @@
                     </ul>
                 </div>
             </div>
-            
-            
-            
+
+
+
             <div id="content">
                 <div class="notice"></div>
-                
+
                 <div class="contents">
-                  
-                    
-                    
-                   
-                   
-                    
-                </div>    
-                
+
+
+
+
+
+
+                </div>
+
             </div>
-            
+
              <div class="footer_1">
                 <div class="footer_2">
                     <span class="footer_left">
@@ -403,7 +403,7 @@
                             <img src="images/jyplogo-b.png" alt="제이와이피엔터테이먼트로고" />
                         </a>
                     </span>
-                    
+
                     <span class="footer_right">
                         <a href="https://www.instagram.com/twicetagram/" class="SNS insta">
                         </a>
