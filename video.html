@@ -450,7 +450,7 @@
                     var idx = $(this).index();
                     console.log(idx)
 
-                    $(this).children('img').attr('src',on).parent('a').siblings().children('img').attr('src',off);
+                    $(this).addClass('on').children('img').attr('src',on).parent('a').siblings().removeClass('on').children('img').attr('src',off);
 
                     $('.video_list ul').eq(idx).css({'display':"block"}).siblings().css({"display":"none"});
 
@@ -461,7 +461,7 @@
                      $(this).children('img').attr('src',on)
 
                 }).mouseleave(function(){
-                    $(this).children('img').attr('src',off)
+                    $(this).not('.on').children('img').attr('src',off)
                 })
 
             })

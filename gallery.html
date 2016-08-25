@@ -413,12 +413,15 @@
 
                 var on ="images/button-on.png";
                 var off ="images/button-off.png";
+
+
+
                 $('.list_button a').click(function(){
 
                     var idx = $(this).index();
-                    console.log(idx)
 
-                    $(this).children('img').attr('src',on).parent().siblings().children('img').attr('src',off);
+
+                    $(this).addClass('on').children('img').attr('src',on).parent('a').siblings().removeClass('on').children('img').attr('src',off);
 
                     $('.photos ul').eq(idx).css({'display':"inline-block"}).siblings().css({"display":"none"});
 
@@ -429,8 +432,10 @@
                      $(this).children('img').attr('src',on)
 
                 }).mouseleave(function(){
-                    $(this).children('img').attr('src',off)
+                    $(this).not('.on').children('img').attr('src',off)
+
                 })
+
             })
 
 
