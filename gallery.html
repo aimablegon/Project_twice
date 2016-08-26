@@ -91,7 +91,7 @@
                 max-width: 1000px;
                 width: 85%;
                 margin: 0 auto;
-                /*position:relative;*/
+                position:relative;
                 height:100%;
             }
             .contents .photo_box .photos{
@@ -136,13 +136,12 @@
             }
             .contents .photo_box .photos_large{
                 padding: 0px;
-                width: auto;
-                height: auto;
+                height: 100%;
                 position:absolute;
-
-            }
-            .contents .photos_large .large{
-                overflow: visible;
+                top:0;
+                left:50%;
+                width:auto;
+                display:none;
             }
 
             .contents .photos_large .list_large ul{
@@ -150,11 +149,52 @@
             }
             .contents .photos_large .list_large ul li{
                 display:none;
+                text-align:center;
             }
 
             .contents .photos_large .list_large ul li img{
                 max-width: 100%;
                 max-height: 100%;
+            }
+
+            .contents .list_large .btn{
+                position:absolute;
+                z-index:110;
+                width:10%;
+                height:100%;
+                top:0;
+
+            }
+            .contents .list_large .prev{outline:1px #FF0 solid;
+                left:0;
+
+            }
+            .contents .list_large .next{outline:1px #FF0 solid;
+                right:0;
+
+            }
+            .contents .list_large .close{
+
+
+            }
+            .contents .list_large .btn span{outline:1px #FF0 solid;
+                background-image:url(images/modal_icon.png);
+                width: 36px;
+                height: 34px;
+
+            }
+            .contents .list_large .prev span{outline:1px #F00 solid
+                background-position:center center;
+                background-repeat:no-repeat;
+            }
+            .contents .list_large .next span{outline:1px #F00 solid;
+                background-position:center center;
+                background-repeat:no-repeat;
+            }
+            .contents .list_large .close span{outline:1px #F00 solid;
+                background-position:center center;
+                background-repeat:no-repeat;
+                height: 36px;
             }
 
             /*content 끝*/
@@ -468,33 +508,40 @@
                     console.log(ul_idx)
 
 
-                    var prep ="";
-                       prep += '<div class="blind">';
-                       prep += '</div>'
-                       $('body').prepend(prep);
+
+                    var aa ="";
+                       aa += '<div class="blind">';
+                       aa += '</div>'
+                       $('body').prepend(aa);
                     $('.blind').css({
-                        'position':'fixed',
-                        'top':0,
-                        'right':0,
-                        "bottom":0,
-                        'left':0,
-                        'backgroundColor':'#111',
-                        'display':'none'
+                       'position':'fixed',
+                       'top':0,
+                       'right':0,
+                       "bottom":0,
+                       'left':0,
+                       'backgroundColor':'#000',
+                       'display':'none',
+                       'z-index':50
                     }).fadeTo(500,0.4);
 
+
                     $('.photos_large').css({
-                        'top':'30%'
+                        'display':'block',
 
 
                     })
-
                     $('.list_large ul').eq(ul_idx).children('li').eq(list_idx).css({
-                        'display':'block',
-                        'position':'relative'
+                        'position':'relative',
+                        'z-index':100
 
-                        }).siblings().css({
-                            'display':'none'
+
+                    }).fadeTo(500,function(){
+                        var imgWidth = $('.list_large ul').eq(ul_idx).children('li').eq(list_idx).children('a').children('img').width()
+                        console.log(imgWidth)  ;
+                        $('.photos_large').css({
+                        marginLeft: -(imgWidth) / 2
                         })
+                    }).siblings().fadeOut()
 
 
 
@@ -2663,7 +2710,7 @@
                         </div>
 
                         <div class="photos_large">
-                            <div class="large">
+
                                 <div class="list_large">
                                     <ul class="list_l">
                                         <li>
@@ -4777,26 +4824,26 @@
                                         </li>
                                     </ul>
 
-                                    <div class="next">
+                                    <div class="next btn">
                                         <a href="">
                                             <span></span>
                                         </a>
                                     </div>
 
-                                    <div class="prev">
+                                    <div class="prev btn">
                                         <a href="">
                                             <span></span>
                                         </a>
                                     </div>
 
-                                    <div class="close">
+                                    <div class="close btn">
                                         <a href="">
                                             <span></span>
                                         </a>
                                     </div>
                                 </div>
 
-                            </div>
+
                         </div>
 
                         <div class="list_button">
