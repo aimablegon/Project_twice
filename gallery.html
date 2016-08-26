@@ -139,8 +139,8 @@
                 height: 100%;
                 position:absolute;
                 top:0;
-                left:50%;
-                width:auto;
+                left:0;
+                width:100%;
                 display:none;
             }
 
@@ -508,7 +508,6 @@
                     console.log(ul_idx)
 
 
-
                     var aa ="";
                        aa += '<div class="blind">';
                        aa += '</div>'
@@ -526,22 +525,15 @@
 
 
                     $('.photos_large').css({
-                        'display':'block',
-
-
+                        'display':'block'
                     })
                     $('.list_large ul').eq(ul_idx).children('li').eq(list_idx).css({
+                        'display':'block',
                         'position':'relative',
                         'z-index':100
-
-
-                    }).fadeTo(500,function(){
-                        var imgWidth = $('.list_large ul').eq(ul_idx).children('li').eq(list_idx).children('a').children('img').width()
-                        console.log(imgWidth)  ;
-                        $('.photos_large').css({
-                        marginLeft: -(imgWidth) / 2
-                        })
-                    }).siblings().fadeOut()
+                    }).siblings().css({
+                        'display':'none'
+                    })
 
 
 
