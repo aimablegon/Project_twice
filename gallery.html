@@ -151,7 +151,6 @@
             }
             .contents .photos_large .list_large ul li{
                 display:none;
-                /*text-align:center;*/
             }
 
             .contents .photos_large .list_large ul li img{
@@ -159,21 +158,19 @@
                 max-height: 100%;
             }
 
-            /*.contents .list_large .wrap_btn{
+            .contents .list_large .wrap_btn{
                 outline:1px #F00 solid;
-                text-align:center;
                 height:100%;
                 position:absolute;
                 z-index:110;
                 top:0;
             }
             .contents .list_large .btn{
-                position:absolute;
-                text-align:center;
+
                 height:100%;
                 width:15%;
 
-            }*/
+            }
             .contents .list_large .prev{outline:1px #FF0 solid;
                 left:0;
 
@@ -488,19 +485,6 @@
                 var off ="images/button-off.png";
 
 
-// 페이지 여러개시 불포함 시작
-                $('.list_button a').click(function(){
-
-                    var idx = $(this).index();
-
-
-                    $(this).addClass('on').children('img').attr('src',on).parent('a').siblings().removeClass('on').children('img').attr('src',off);
-
-                    $('.photos ul').eq(idx).css({'display':"inline-block"}).siblings().css({"display":"none"});
-
-                    return false
-                })
-// 페이지 여개개시 불포함 끝
 
                 $('.list_button a').mouseenter(function(){
                      $(this).children('img').attr('src',on)
@@ -513,11 +497,6 @@
                 $('.photos .list_s a').click(function(){
                     var list_idx =$(this).parent('li').index();
                     console.log(list_idx)
-
-// 페이지 여러개시 불포함 시작
-                    var ul_idx = $(this).parents('ul').index();
-                    console.log(ul_idx)
-// 페이지 여개개시 불포함 끝
 
                     var aa ="";
                        aa += '<div class="blind">';
@@ -539,13 +518,24 @@
                         'display':'block'
                     })
 
-                    $('.list_large ul').eq(ul_idx).children('li').eq(list_idx).css({
+
+                    $('.list_large ul li').eq(list_idx).css({
                         'display':'block',
                         'position':'relative',
+                        'width': function(){
+                            var imgWidth = $(this).find('img').width()
+                            console.log(imgWidth)
+                            return imgWidth
+                        },
+                        'height':function(){
+                            var imgHeihgt = $(this).find('img').height();
+                            console.log(imgHeihgt)
+                            return imgHeight
+                        },
                         'z-index':100,
                         'left' : '50%',
                         marginLeft : function(){
-                            var iW = imgWidth/2
+                            var iW = $('.list_large ul li').eq(list_idx).find('img').width()/2
                             console.log(iW)
                             return -iW
                         }
@@ -553,11 +543,8 @@
                         'display':'none'
                     })
 
-                    var imgWidth = $('.list_large ul').eq(ul_idx).children('li').eq(list_idx).find('img').width()
-                    console.log(imgWidth)
 
-                    var imgHeihgt = $('.list_large ul').eq(ul_idx).children('li').eq(list_idx).find('img').height()
-                    console.log(imgHeihgt)
+
                     //
                     // $('.list_large .wrap_btn').css({
                     //     'width' : imgWidth,
@@ -2855,7 +2842,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="e">
+                                            <a href="">
                                                 <img src="images/gallery_a/l_a_20.jpg" alt="">
                                             </a>
                                         </li>
@@ -2911,7 +2898,7 @@
                                         </li>
                                     </ul>
 
-                                    <ul class="list_l">
+                                    <!-- <ul class="list_l">
                                         <li>
                                             <a href="">
                                                 <img src="images/gallery_b/l_b_1.jpg" alt="">
@@ -4868,7 +4855,7 @@
                                                 <img src="images/gallery_n/l_n_24.jpg" alt="">
                                             </a>
                                         </li>
-                                    </ul>
+                                    </ul> -->
 
                                 </div>
 
@@ -4876,7 +4863,7 @@
                         </div>
 
                         <div class="list_button">
-                            <a href="">
+                            <a href="" class="on">
                                 <img src="images/button-on.png"></img>
                             </a>
                             <a href="">
