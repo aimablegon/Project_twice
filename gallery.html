@@ -151,7 +151,7 @@
             }
             .contents .photos_large .list_large ul li{
                 display:none;
-                text-align:center;
+                /*text-align:center;*/
             }
 
             .contents .photos_large .list_large ul li img{
@@ -159,7 +159,7 @@
                 max-height: 100%;
             }
 
-            .contents .list_large .wrap_btn{
+            /*.contents .list_large .wrap_btn{
                 outline:1px #F00 solid;
                 text-align:center;
                 height:100%;
@@ -173,7 +173,7 @@
                 height:100%;
                 width:15%;
 
-            }
+            }*/
             .contents .list_large .prev{outline:1px #FF0 solid;
                 left:0;
 
@@ -488,7 +488,7 @@
                 var off ="images/button-off.png";
 
 
-
+// 페이지 여러개시 불포함 시작
                 $('.list_button a').click(function(){
 
                     var idx = $(this).index();
@@ -500,6 +500,7 @@
 
                     return false
                 })
+// 페이지 여개개시 불포함 끝
 
                 $('.list_button a').mouseenter(function(){
                      $(this).children('img').attr('src',on)
@@ -513,9 +514,10 @@
                     var list_idx =$(this).parent('li').index();
                     console.log(list_idx)
 
+// 페이지 여러개시 불포함 시작
                     var ul_idx = $(this).parents('ul').index();
                     console.log(ul_idx)
-
+// 페이지 여개개시 불포함 끝
 
                     var aa ="";
                        aa += '<div class="blind">';
@@ -536,10 +538,17 @@
                     $('.photos_large').css({
                         'display':'block'
                     })
+
                     $('.list_large ul').eq(ul_idx).children('li').eq(list_idx).css({
                         'display':'block',
                         'position':'relative',
-                        'z-index':100
+                        'z-index':100,
+                        'left' : '50%',
+                        marginLeft : function(){
+                            var iW = imgWidth/2
+                            console.log(iW)
+                            return -iW
+                        }
                     }).siblings().css({
                         'display':'none'
                     })
@@ -549,17 +558,17 @@
 
                     var imgHeihgt = $('.list_large ul').eq(ul_idx).children('li').eq(list_idx).find('img').height()
                     console.log(imgHeihgt)
-
-                    $('.list_large .wrap_btn').css({
-                        'width' : imgWidth,
-                        'height' : imgHeihgt,
-                        'left' : '50%',
-                        marginLeft : function(){
-                            var iW = imgWidth/2
-                            console.log(iW)
-                            return -iW
-                        }
-                    })
+                    //
+                    // $('.list_large .wrap_btn').css({
+                    //     'width' : imgWidth,
+                    //     'height' : imgHeihgt,
+                    //     'left' : '50%',
+                    //     marginLeft : function(){
+                    //         var iW = imgWidth/2
+                    //         console.log(iW)
+                    //         return -iW
+                    //     }
+                    // })
 
 
 
