@@ -144,6 +144,8 @@
                 display:none;
             }
 
+
+
             .contents .photos_large .list_large ul{
                 position:relative;
             }
@@ -157,12 +159,19 @@
                 max-height: 100%;
             }
 
-            .contents .list_large .btn{
+            .contents .list_large .wrap_btn{
+                outline:1px #F00 solid;
+                text-align:center;
+                height:100%;
                 position:absolute;
                 z-index:110;
-                width:10%;
-                height:100%;
                 top:0;
+            }
+            .contents .list_large .btn{
+                position:absolute;
+                text-align:center;
+                height:100%;
+                width:15%;
 
             }
             .contents .list_large .prev{outline:1px #FF0 solid;
@@ -533,6 +542,23 @@
                         'z-index':100
                     }).siblings().css({
                         'display':'none'
+                    })
+
+                    var imgWidth = $('.list_large ul').eq(ul_idx).children('li').eq(list_idx).find('img').width()
+                    console.log(imgWidth)
+
+                    var imgHeihgt = $('.list_large ul').eq(ul_idx).children('li').eq(list_idx).find('img').height()
+                    console.log(imgHeihgt)
+
+                    $('.list_large .wrap_btn').css({
+                        'width' : imgWidth,
+                        'height' : imgHeihgt,
+                        'left' : '50%',
+                        marginLeft : function(){
+                            var iW = imgWidth/2
+                            console.log(iW)
+                            return -iW
+                        }
                     })
 
 
@@ -2704,6 +2730,25 @@
                         <div class="photos_large">
 
                                 <div class="list_large">
+                                    <div class="wrap_btn">
+                                        <div class="next btn">
+                                            <a href="">
+                                                <span></span>
+                                            </a>
+                                        </div>
+
+                                        <div class="prev btn">
+                                            <a href="">
+                                                <span></span>
+                                            </a>
+                                        </div>
+                                        <div class="close btn">
+                                            <a href="">
+                                                <span></span>
+                                            </a>
+                                        </div>
+                                    </div>
+
                                     <ul class="list_l">
                                         <li>
                                             <a href="">
@@ -4816,23 +4861,6 @@
                                         </li>
                                     </ul>
 
-                                    <div class="next btn">
-                                        <a href="">
-                                            <span></span>
-                                        </a>
-                                    </div>
-
-                                    <div class="prev btn">
-                                        <a href="">
-                                            <span></span>
-                                        </a>
-                                    </div>
-
-                                    <div class="close btn">
-                                        <a href="">
-                                            <span></span>
-                                        </a>
-                                    </div>
                                 </div>
 
 
