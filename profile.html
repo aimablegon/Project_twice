@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="twice_font/font/flaticon.css" type="text/css" />
         <style type="text/css">
         @import url(https://fonts.googleapis.com/css?family=Oswald&subset=latin-ext);
-        
+
             *{margin:0; padding:0;}
             html,body{height:100%;}
             ul,ol{list-style:none;}
@@ -17,7 +17,7 @@
             }
             .wrapper{
                 min-height:100%;
-                height:100%; 
+                height:100%;
                 background-image: url(images/tp1.jpg);
                 background-repeat: no-repeat;
                 -webkit-background-size: cover;
@@ -26,27 +26,27 @@
                 overflow:auto;
             }
             .wrapper .header{
-                height:100px; 
+                height:100px;
                 background-color:rgba(255,255,255,0.7);
-                position:fixed; 
-                width:100%; 
-                left:0; 
-                top:0; 
+                position:fixed;
+                width:100%;
+                left:0;
+                top:0;
                 padding:0 20px;
                 box-sizing:border-box;
                 -webkit-box-sizing:border-box;
             	-moz-box-sizing:border-box;
-            	-o-box-sizing:border-box;	
+            	-o-box-sizing:border-box;
                 box-shadow:0 1px 15px #AAA; z-index:10;
             }
             .wrapper .header .mark{
                 float:left;
             }
-            
+
             .wrapper .header .nav{
                 float:right;
             }
-            
+
             .wrapper .header .mark a{
                 display:block; width:104px; height:55px; padding:25px;
                 background-image:url(images/twice_logo.png);
@@ -57,8 +57,8 @@
             .wrapper .header .mark a:hover{
                 transform:rotateY(180deg);
             }
-            
-            
+
+
             .wrapper .header .nav button{
                 display:none;
             }
@@ -66,27 +66,27 @@
                 font-size:0; z-index:10;
             }
             .wrapper .header .nav li{
-                display:inline-block; 
-                font-size:16px; 
-                vertical-align:top; 
+                display:inline-block;
+                font-size:16px;
+                vertical-align:top;
                 line-height:100px;
                 font-family: 'Oswald', sans-serif;
-                
+
             }
             .wrapper .header .nav li a{
-                padding:0 10px; 
-                display:block; 
-                transition:0.3s; 
+                padding:0 10px;
+                display:block;
+                transition:0.3s;
                 color:#08e9d1;
-                text-decoration:none; 
-                font-size:1.1em; 
+                text-decoration:none;
+                font-size:1.1em;
                 font-family: 'Oswald', sans-serif;
             }
              .wrapper .header .nav li a:hover{
-                border-top:4px #ffb0b0 solid; 
+                border-top:4px #ffb0b0 solid;
                 color:#ffb0b0;
             }
-            
+
              .content{
                 width:100%;
                 height:100%;
@@ -136,11 +136,11 @@
                 opacity:0.4;
                 cursor:pointer;
             }
-            
-            
 
-            
-            
+
+
+
+
             @media screen and (max-width:768px){
                 .wrapper .header{
                     height:55px; padding:0; background-color:#FFF;
@@ -150,31 +150,31 @@
                     transform:scale(0.7, 0.7);
                 }
                 .wrapper .header .mark a:hover{
-                    
+
                     transform:scale(0.7, 0.7) rotateY(180deg);
                 }
-                
-                
+
+
                 .wrapper .header .nav button{
-                    display:block; width:180px; padding:17px 40px; border:0;
+                    display:block; width:180px; padding:16px 40px; border:0;
                     color:#FFF; background-color:#08e9d1;
-                    text-decoration:none; font-size:0.95em; font-family: 'Oswald', sans-serif;
+                    text-decoration:none; font-size:15px; font-family: 'Oswald', sans-serif;
                     cursor:pointer;
                 }
                 /*임시 시작*/
                 /*.wrapper .header .nav button:hover + ul{*/
                 /*    display:block;*/
                 /*}*/
-                
+
                 /*임시끝*/
-                
+
                 .wrapper .header .nav ul{
                     display:none; position:absolute; background-color:rgba(255, 255, 255, 0.8); z-index:1;
                 }
                 .wrapper .header .nav ul li{
                     line-height:55px; text-indent:16px; padding-right:10px; width:100%;
                 }
-               
+
                 .wrapper .header .nav li a:hover{
                     border-left:4px #08e9d1 solid; color:#ffb0b0;
                     border-top:0; background-color:#FFF;
@@ -187,7 +187,7 @@
                     width:80px;
                     height:80px;
                 }
-               
+
              }
              @media screen and (max-width:479px){
                 .wrapper .header{
@@ -249,20 +249,20 @@
                     background-size:cover;
                 }
             }
-             
-             
-             
-             
+
+
+
+
         </style>
-        
-        
-        
+
+
+
         <script>
             $(function(){
                 $('.nav>button').click(function(){
                     $(this).next('ul').slideToggle(1000)
                 })
-                
+
                 $(window).resize(function(){
                     if($(this).width() < 768){
                         $('.nav ul').css('display','none');
@@ -270,7 +270,7 @@
                         $('.nav ul').css('display','block')
                     }
                 })
-                
+
                 var imgL = [];
                 var idx = 0;
                 $('.bg img').each(function(i){
@@ -316,20 +316,20 @@
                 }).mouseleave(function(){
                     $('.thumb img').css('opacity','0.6')
                 })
-                    
+
             })
-            
-            
+
+
         </script>
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
+
     </head>
     <body>
         <div class="wrapper">
@@ -391,12 +391,12 @@
             <div class="next"></div>
             <div class="prev"></div>
         </div>
-            
-            
-            
-            
+
+
+
+
         </div>
-        
-        
+
+
     </body>
 </html>
