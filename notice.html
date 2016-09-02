@@ -117,7 +117,11 @@
             }
 
 
+
             .contents{max-width:1000px;width:85%; padding:50px 0px; margin:0 auto; position:relative; }
+            .contents .contents_notice{
+                padding-bottom:60px;
+            }
 
             .contents .contents_notice .notice_title{
                 border-top: 2px solid #d4d3d3;
@@ -148,6 +152,17 @@
                 width:auto;
             }
 
+            .contents .contents_notice .notice_img{
+                height: 100%;
+                width: 100%;
+                max-width: 351px;
+                max-height: 493px;
+            }
+
+
+
+
+
             .contents .contents_notice .notice_title .list_date{
                 width: 10%;
                 padding: 13px 1% 0 0;
@@ -166,7 +181,6 @@
             }
             .contents .wrap .notice_list{
                 width: 100%;
-                margin: 0 0 30px;
                 border-top: 2px solid #d4d3d3;
             }
             .contents .notice_list .list_ul li{
@@ -175,12 +189,14 @@
                 border-bottom: 1px solid #d4d3d3;
                 background: #fcfcfc;
                 font-family: 'Nanum Gothic',monospace;
+                font-size: 0;
             }
 
             .contents .notice_list .list_ul .list_num{
                 width: 40px;
                 padding: 0 0 0 30px;
                 display: inline-block;
+                font-size: 11px;
             }
             .contents .notice_list .list_ul .list_date{
                 float: right;
@@ -196,6 +212,25 @@
             }
             .contents .notice_list .list_ul .p_default{
                 font-weight: bold;
+                font-size: 12px;
+                line-height: 1.6;
+            }
+            .p_bleu, .p_red, .p_default, .p_underline{
+                font-weight: bold;
+            }
+            .p_blue{color:blue;}
+            .p_red{color:red;}
+            .p_underline{text-decoration: underline;}
+
+            .contents .wrap .notice_content p{
+                margin:20px 0;
+            }
+            .contents .wrap .notice_content .p_1{
+                margin-top:0;
+            }
+
+            .contents .wrap .notice_content .p_3{
+                margin:40px 0;
             }
             /*content 끝*/
 
@@ -362,10 +397,29 @@
                 .contents .contents_notice .notice_title .list_num{
                     display: none;
                 }
+                .contents .notice_list .list_ul .list_num{
+                    width:auto;
+                    padding:0;
+                    display: inline-block;
+                    float:left;
+                }
+                .contents .notice_list .list_ul a{
+                    width:90%;
+                    display: inline-block;
+                    padding-left: 5%;
+
+                }
+                .contents .notice_list .list_ul .p_default{
+                    width:100%;
+
+                }
                 .contents .contents_notice .notice_title .list_text{
                     width: 95%;
-                    padding: 12px 0 12px 5%;
+                    padding: 12px 1.5% 12px 3.5%;
                     font-size: 15px;
+                }
+                .contents .notice_list .list_ul li{
+                    padding: 11px 20px;
                 }
             }
             @media screen and (max-width:479px){
@@ -581,15 +635,15 @@
                                     </p>
 
                                     <p class="p_3">
-                                        <strong class="p_default">날짜 :</strong>2016년 7월 3일 일요일
+                                        <strong class="p_default">날짜 :</strong> 2016년 7월 3일 일요일
                                         <strong class="p_blue">오후 8시</strong>
                                         <br />
 
                                         <strong class="p_default">장소 :</strong>
-                                        <span class="p_red">우리금융아트홀?(송파구 올림픽로 424 올림픽공원)</span>
+                                        <span class="p_red"> 우리금융아트홀?(송파구 올림픽로 424 올림픽공원)</span>
                                         <br />
 
-                                        <strong class="p_default">티켓 :</strong>이벤트 당일, 입장시에
+                                        <strong class="p_default">티켓 :</strong> 이벤트 당일, 입장시에
                                         <span class="p_underline">‘포토카드21종+렌티큘러9종’</span>과
                                         <strong class="p_default">교환</strong> 후 배부
                                         <br />
