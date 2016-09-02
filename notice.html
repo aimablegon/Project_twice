@@ -50,9 +50,9 @@
             }
             ul,ol{list-style:none;}
             a{text-decoration: none;}
-            .wrapper{
+            /*.wrapper{
                 height:100%;
-            }
+            }*/
 
             /*header*/
             .wrapper .header{
@@ -107,7 +107,7 @@
             /*content*/
 
             #content{
-                width:100%; height:100%; margin-top:100px; padding:0 0 50px; position:relative;}
+                width:100%; margin-top:100px; padding:0 0 50px; position:relative;}
             .notice{
                 height:60px; margin:0 auto; padding:20px 0;
                 background-color: #f4f4f4;
@@ -164,7 +164,39 @@
             .contents .contents_notice .notice_content{
                 padding:30px;
             }
+            .contents .wrap .notice_list{
+                width: 100%;
+                margin: 0 0 30px;
+                border-top: 2px solid #d4d3d3;
+            }
+            .contents .notice_list .list_ul li{
+                padding: 11px 0 9px;
+                color: #848280;
+                border-bottom: 1px solid #d4d3d3;
+                background: #fcfcfc;
+                font-family: 'Nanum Gothic',monospace;
+            }
 
+            .contents .notice_list .list_ul .list_num{
+                width: 40px;
+                padding: 0 0 0 30px;
+                display: inline-block;
+            }
+            .contents .notice_list .list_ul .list_date{
+                float: right;
+                width: 10%;
+                font-size: 11px;
+                color: #999;
+                padding-right: 3%;
+            }
+            .contents .notice_list .list_ul a{
+                color: #1e1e1e;
+                word-break: break-all;
+                display: inline-block;
+            }
+            .contents .notice_list .list_ul .p_default{
+                font-weight: bold;
+            }
             /*content 끝*/
 
 
@@ -253,11 +285,29 @@
 
                 /*content 시작*/
 
-               #content{margin-top:55px;}
+                #content{margin-top:55px;}
                 .notice{
                     transition:1s;
                     -webkit-background-size:230px; background-size:230px;
                 }
+
+                .contents .contents_notice .notice_title h3{
+                    padding: 12px 5px 10px;
+                    margin: 0;
+                    font-size: 13px;
+                    line-height: 20px;
+                    color: #05abf6;
+                    width:auto;
+                }
+
+                .contents .contents_notice .notice_title .list_date{
+                    width: 10%;
+                    padding: 13px 3% 0 0;
+                    font-size: 11px;
+                    text-align:center;
+                }
+
+
 
 
                 /*content end*/
@@ -298,7 +348,27 @@
                  /*footer end*/
 
              }
-              @media screen and (max-width:479px){
+
+
+            @media screen and (max-width:600px){
+                .contents .contents_notice .notice_title .list_date{
+                    display: none;
+                }
+                .contents .notice_list .list_ul .list_date{
+                    display: none;
+                }
+            }
+            @media screen and (max-width:500px){
+                .contents .contents_notice .notice_title .list_num{
+                    display: none;
+                }
+                .contents .contents_notice .notice_title .list_text{
+                    width: 95%;
+                    padding: 12px 0 12px 5%;
+                    font-size: 15px;
+                }
+            }
+            @media screen and (max-width:479px){
                 /*header start*/
                 .wrapper .header{
                     height:40px;
@@ -628,7 +698,7 @@
                                         <li class="list_li">
                                             <span class="list_num">29</span>
                                             <a href="">
-                                                <span class="p_defaulte">TWICE 2nd mini Album <PAGE TWO> SPECIAL EVENT 2 안내</span>
+                                                <span class="p_default">TWICE 2nd mini Album &lt;PAGE TWO&gt; SPECIAL EVENT 2 안내</span>
                                             </a>
                                             <span class="list_date">2016.06.27</span>
                                         </li>
@@ -636,7 +706,7 @@
                                         <li class="list_li">
                                             <span class="list_num">28</span>
                                             <a href="">
-                                                <span class="p_defaulte">2016 JYP NATION CONCERT Ticket Open Notice</span>
+                                                <span class="p_default">2016 JYP NATION CONCERT Ticket Open Notice</span>
                                             </a>
                                             <span class="list_date">2016.06.22</span>
                                         </li>
@@ -644,7 +714,7 @@
                                         <li class="list_li">
                                             <span class="list_num">27</span>
                                             <a href="">
-                                                <span class="p_defaulte">TWICE 2nd Mini Album ‘PAGE TWO’ 포토카드 이벤트 안내</span>
+                                                <span class="p_default">TWICE 2nd Mini Album ‘PAGE TWO’ 포토카드 이벤트 안내</span>
                                             </a>
                                             <span class="list_date">2016.06.18</span>
                                         </li>
@@ -652,7 +722,7 @@
                                         <li class="list_li">
                                             <span class="list_num">26</span>
                                             <a href="">
-                                                <span class="p_defaulte">Happy Birthday TZUYU ♥</span>
+                                                <span class="p_default">Happy Birthday TZUYU ♥</span>
                                             </a>
                                             <span class="list_date">2016.06.14</span>
                                         </li>
@@ -660,7 +730,7 @@
                                         <li class="list_li">
                                             <span class="list_num">25</span>
                                             <a href="">
-                                                <span class="p_defaulte">TWICE CHEER UP PLAY</span>
+                                                <span class="p_default">TWICE CHEER UP PLAY</span>
                                             </a>
                                             <span class="list_date">2016.06.07</span>
                                         </li>
@@ -668,7 +738,7 @@
                                         <li class="list_li">
                                             <span class="list_num">24</span>
                                             <a href="">
-                                                <span class="p_defaulte">TWICE 블랙리스트 심화 기준 추가 안내 (160530)</span>
+                                                <span class="p_default">TWICE 블랙리스트 심화 기준 추가 안내 (160530)</span>
                                             </a>
                                             <span class="list_date">2016.05.30</span>
                                         </li>
@@ -676,7 +746,7 @@
                                         <li class="list_li">
                                             <span class="list_num">23</span>
                                             <a href="">
-                                                <span class="p_defaulte">Happy Birthday DAHYUN ♥</span>
+                                                <span class="p_default">Happy Birthday DAHYUN ♥</span>
                                             </a>
                                             <span class="list_date">2016.05.28</span>
                                         </li>
@@ -684,7 +754,7 @@
                                         <li class="list_li">
                                             <span class="list_num">22</span>
                                             <a href="">
-                                                <span class="p_defaulte">TWICE PAGE TWO 공개 방송 Special Event 안내</span>
+                                                <span class="p_default">TWICE PAGE TWO 공개 방송 Special Event 안내</span>
                                             </a>
                                             <span class="list_date">2016.05.02</span>
                                         </li>
@@ -692,7 +762,7 @@
                                         <li class="list_li">
                                             <span class="list_num">21</span>
                                             <a href="">
-                                                <span class="p_defaulte">TWICE(트와이스) "CHEER UP " 공식 응원법</span>
+                                                <span class="p_default">TWICE(트와이스) "CHEER UP " 공식 응원법</span>
                                             </a>
                                             <span class="list_date">2016.04.29</span>
                                         </li>
@@ -700,7 +770,7 @@
                                         <li class="list_li">
                                             <span class="list_num">20</span>
                                             <a href="">
-                                                <span class="p_defaulte">Happy Birthday CHAEYOUNG ♥</span>
+                                                <span class="p_default">Happy Birthday CHAEYOUNG ♥</span>
                                             </a>
                                             <span class="list_date">2016.04.23</span>
                                         </li>
