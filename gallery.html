@@ -187,25 +187,36 @@
 
             }
             .contents .list_large .close{
-
+                width:100%;
 
             }
-
-            .contents .list_large .prev img{
+            .contents .list_large .btn span{outline:1px #FF0 solid;
+                background-image:url(images/modal_icon.png);
+                width: 36px;
+                height: 34px;
+                position: absolute;
                 top:45%;
-                left:20%;
-                position:absolute;
+
             }
-            .contents .list_large .next img{
-                top:45%;
-                right:20%;
-                position:absolute;
+            .contents .list_large .prev span{outline:1px #F00 solid;
+                background-position:0 -36px;
+                background-repeat:no-repeat;
+                left: 20%;
+                display:none;
             }
-            /*.contents .list_large .close img{outline:1px #F00 solid;
-                background-position:center center;
+            .contents .list_large .next span{outline:1px #F00 solid;
+                background-position:0 -72px;
+                background-repeat:no-repeat;
+                right: 20%;
+                display: none;
+            }
+            .contents .list_large .close span{outline:1px #F00 solid;
+                background-position:0 0
                 background-repeat:no-repeat;
                 height: 36px;
-            }*/
+                top:-18px;
+                right:-18px;
+            }
 
             /*content 끝*/
 
@@ -610,6 +621,12 @@
                         }
                     })
 
+                    $('.wrap_btn .arr a').mouseenter(function(){
+                         $(this).children('span').css('display','block')
+
+                    }).mouseleave(function(){
+                         $(this).children('span').css('display','none')
+                    })
 
 
                     return false
@@ -2780,23 +2797,23 @@
 
                                 <div class="list_large">
                                     <div class="wrap_btn">
-                                        <div class="next btn">
-                                            <a href="">
-                                                <img src="images/nextImgBtn.png" alt="">
-                                            </a>
-                                        </div>
-
-                                        <div class="prev btn">
-                                            <a href="">
-                                                <img src="images/prevImgBtn.png" alt="">
-                                            </a>
-                                        </div>
-
-                                        <!-- <div class="close btn">
+                                        <div class="next btn arr">
                                             <a href="">
                                                 <span></span>
                                             </a>
-                                        </div> -->
+                                        </div>
+
+                                        <div class="prev btn arr">
+                                            <a href="">
+                                                <span></span>
+                                            </a>
+                                        </div>
+
+                                        <div class="close btn">
+                                            <a href="">
+                                                <span></span>
+                                            </a>
+                                        </div>
 
                                     </div>
 
