@@ -88,7 +88,7 @@
                 height:auto;
             }
             .contents .photo_box{
-                max-width: 1000px;
+                max-width: 1024px;
                 width: 85%;
                 margin: 0 auto;
                 position:relative;
@@ -484,30 +484,35 @@
                     }else if($(this).width()>767){
                         $('.nav ul').css('display','block')
                     }
-                    // var ratio = $('#img').height() / $('#img').width()
-                    // $('#img').css({'height' : $('#img').height()});
-                    // $('#img').css({'width' : $('#img').width()});
-                    //
-                    // if($(window).width() < $('#img').width() + 30){
-                    //     $('#img').css({'width' :$(window).width() - 50, "height" : ($(window).width() - 50) * ratio })
-                    // }
-                    // if($(window).height() < $('#img').height() + 30){
-                    //     $('#img').css({'height' :$(window).height() - 50})
-                    // }
 
-                    // var imgSize = $('#img').height()/$('#img').width()
-                    // var winSize = $(window).height()/$(window).width()
-                    //
                     if( $('#img').width()+50 > $(window).width()){
                         $('#img').parents('li').css('width', $(window).width() - 100 )
                         $('#img').parents('li').css('marginLeft',-($(window).width() - 100) / 2)
-                    }else if($('#img').width() <= $(window).width()){
+                        $('.list_large .wrap_btn').css({
+                            'width': $('#img').width(),
+                            'marginLeft':-($(window).width() - 100) / 2,
+                            'height': $('#img').height(),
+
+
+                        })
+
+                    }else if($('#img').width() == $(window).width()){
                         console.log('aaaaa')
                     }
 
                     if( $('#img').height() > $(window).height()){
-                         $('#img').parents('li').css('width', $(window).height() - 100 )
-                         $('#img').parents('li').css('marginLeft',-($(window).height() - 100) / 2)
+                        $('#img').parents('li').css('width', $(window).height() );
+                        $('#img').parents('li').css('top','-100px');
+                        $('#img').parents('li').css('marginLeft',-$(window).height() / 2)
+                        // $('.list_large .wrap_btn').css({
+                        //     'width': $('#img').width(),
+                        //     'marginLeft':-($(window).height()) / 2,
+                        //     'height': $('#img').height(),
+                        //     'top': '-100px'
+                        //
+                        //
+                        // })
+
                     }
 
 
@@ -558,7 +563,7 @@
                         'display':'block',
                         'position':'relative',
                         'width': document.getElementById("img").naturalWidth,
-                        'height':'100%',
+                        'height':document.getElementById("img").naturalHeight,
                         'z-index':100,
                         'left' : '50%',
                         'marginLeft' : -(document.getElementById("img").naturalWidth)/2
@@ -787,7 +792,7 @@
                                 </li>
                             </ul>
 
-                            <ul class="list_s">
+                            <!-- <ul class="list_s">
                                 <li>
                                     <a href="">
                                         <img src="images/gallery_b/s_b_1.jpg" alt="">
@@ -2744,7 +2749,7 @@
                                         <img src="images/gallery_n/s_n_24.jpg" alt="">
                                     </a>
                                 </li>
-                            </ul>
+                            </ul> -->
                         </div>
 
                         <div class="photos_large">
