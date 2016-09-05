@@ -170,8 +170,16 @@
                 width:15%;
 
             }
+            .contents .list_large .btn a{
+                display: block;
+                height: 100%;
+                position: relative;
+
+            }
+
             .contents .list_large .prev{outline:1px #FF0 solid;
                 left:0;
+
 
             }
             .contents .list_large .next{outline:1px #FF0 solid;
@@ -182,25 +190,22 @@
 
 
             }
-            .contents .list_large .btn span{outline:1px #FF0 solid;
-                background-image:url(images/modal_icon.png);
-                width: 36px;
-                height: 34px;
 
+            .contents .list_large .prev img{
+                top:45%;
+                left:20%;
+                position:absolute;
             }
-            .contents .list_large .prev span{outline:1px #F00 solid
-                background-position:center center;
-                background-repeat:no-repeat;
+            .contents .list_large .next img{
+                top:45%;
+                right:20%;
+                position:absolute;
             }
-            .contents .list_large .next span{outline:1px #F00 solid;
-                background-position:center center;
-                background-repeat:no-repeat;
-            }
-            .contents .list_large .close span{outline:1px #F00 solid;
+            /*.contents .list_large .close img{outline:1px #F00 solid;
                 background-position:center center;
                 background-repeat:no-repeat;
                 height: 36px;
-            }
+            }*/
 
             /*content 끝*/
 
@@ -501,18 +506,37 @@
                     }
 
                     if( $('#img').height() > $(window).height()){
-                        $('#img').parents('li').css('width', $(window).height() );
-                        $('#img').parents('li').css('top','-100px');
-                        $('#img').parents('li').css('marginLeft',-$(window).height() / 2)
-                        // $('.list_large .wrap_btn').css({
-                        //     'width': $('#img').width(),
-                        //     'marginLeft':-($(window).height()) / 2,
-                        //     'height': $('#img').height(),
-                        //     'top': '-100px'
-                        //
-                        //
-                        // })
+                        if($('#img').width() > $('#img').height()){
+                            $('#img').parents('li').css('width', $(window).height() );
+                            $('#img').parents('li').css('top','-100px');
+                            $('#img').parents('li').css('marginLeft',-$(window).height() / 2)
+                            $('.list_large .wrap_btn').css({
+                                'width': $('#img').width(),
+                                'marginLeft':-($(window).height()) / 2,
+                                'height': $('#img').height(),
+                                'top': '-100px'
 
+
+                            })
+                        }
+                    }
+                    if( $('#img').height() > $(window).height()+300){
+                        if($('#img').width() < $('#img').height()){
+                            if(($(window).height()-500)*($('#img').height()/$('#img').width()) !== 0){
+                                var imgHeig = ($(window).height()-400)*($('#img').height()/$('#img').width())
+                                $('#img').parents('li').css('width', imgHeig );
+                                $('#img').parents('li').css('top','-100px');
+                                $('#img').parents('li').css('marginLeft',- imgHeig / 2)
+                                $('.list_large .wrap_btn').css({
+                                    'width': $('#img').width(),
+                                    'marginLeft':-imgHeig / 2,
+                                    'height': $('#img').height(),
+                                    'top': '-100px'
+
+
+                                })
+                            }
+                        }
                     }
 
 
@@ -2758,21 +2782,21 @@
                                     <div class="wrap_btn">
                                         <div class="next btn">
                                             <a href="">
-                                                <span></span>
+                                                <img src="images/nextImgBtn.png" alt="">
                                             </a>
                                         </div>
 
                                         <div class="prev btn">
                                             <a href="">
-                                                <span></span>
+                                                <img src="images/prevImgBtn.png" alt="">
                                             </a>
                                         </div>
 
-                                        <div class="close btn">
+                                        <!-- <div class="close btn">
                                             <a href="">
                                                 <span></span>
                                             </a>
-                                        </div>
+                                        </div> -->
 
                                     </div>
 
