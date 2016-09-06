@@ -148,6 +148,7 @@
 
             .contents .photos_large .list_large ul{
                 position:relative;
+                width:100%;
                 overflow: hidden
 
             }
@@ -160,7 +161,6 @@
             }
 
             .contents .list_large .wrap_btn{
-                outline:1px #F00 solid;
                 height:100%;
                 position:absolute;
                 z-index:110;
@@ -643,31 +643,47 @@
                     })
 
                     //next버튼 클릭 슬라이드
-                    idx =0
 
-                    $('.next').click(function(){
+
+                    $('.next a').click(function(){
                         $('.list_l li').eq(list_idx).removeClass('slide').animate({
                             'left':-$('.list_l li').width()
-                        }).parent().next().addClass('slide').css({
+                        }).css({
+                            'display':'none'
+                        }).next().addClass('slide').css({
                             'display':'block',
-                            'left':$('.list_l li').width()
+                            'left':$('.list_l li').width(),
+                            'position':'relative',
+                            // 'width': document.getElementById("img").naturalWidth-30,
+                            // 'height':document.getElementById("img").naturalHeight,
+                            'z-index':100,
+                            'margin':'0 auto'
+
                         }).stop().animate({
                             'left':0
                         })
 
 
+                        list_idx ++
 
-                        idx++
-
-                        if(idx == $('.list_l li').length){
-                            idx = 0
-                            $('.list_l li').eq(idx).children('img').css({
+                        if(list_idx == $('.list_l li').length){
+                            list_idx = 0
+                            $('.list_l li').eq(list_idx).addClass('slide').css({
                                'left':$('.list_l li').width(),
-                               'display':'block'
+                               'display':'block',
+                               'position':'relative',
+                               // 'width': document.getElementById("img").naturalWidth-30,
+                               // 'height':document.getElementById("img").naturalHeight,
+                               'z-index':100,
+                               'margin':'0 auto'
                             }).stop().animate({
                                 'left':0
-                            }).parent().addClass('slide').siblings().removeClass('slide')
+                            }).siblings().removeClass('slide').css({
+                                'display':'none'
+                            })
                         }
+
+                        return false
                     })
 
 
@@ -675,32 +691,50 @@
 
 
                    // 프리브 버튼을 클릭했을때, 왼쪽으로 넘어가게
-                    $('.prev').click(function(){
-                        $('.list_l li').eq(idx).removeClass('slide').animate({
+                    $('.prev a').click(function(){
+                        $('.list_l li').eq(list_idx).removeClass('slide').animate({
                             'left':$('.list_l li').width()
-                        }).parent().prev().addClass('slide').css({
+                        }).css({
+                            'display':'none'
+                        }).prev().addClass('slide').css({
                             'display':'block',
-                            'left':-$('.list_l li').width()
+                            'left':-$('.list_l li').width(),
+                            'position':'relative',
+                            // 'width': document.getElementById("img").naturalWidth-30,
+                            // 'height':document.getElementById("img").naturalHeight,
+                            'z-index':100,
+                            'margin':'0 auto'
                         }).stop().animate({
                             'left':0
                         })
 
-                       idx--
+                       list_idx --
 
-                       if(idx < 0){
-                            idx = $('.list_l li').length-1
-                            $('.list_l li').eq(idx).children('img').css({
+                       if(list_idx < 0){
+                            list_idx = $('.list_l li').length-1
+                            $('.list_l li').eq(list_idx).css({
                                 'left': -$('.list_l li').width(),
-                                'display':'block'
+                                'display':'block',
+                                'position':'relative',
+                                // 'width': document.getElementById("img").naturalWidth-30,
+                                // 'height':document.getElementById("img").naturalHeight,
+                                'z-index':100,
+                                'margin':'0 auto'
                             }).stop().animate({
                                 'left':0
-                            }).parent().addClass('slide').siblings().removeClass('slide')
+                            }).addClass('slide').siblings().removeClass('slide')
                        }
+                       return false
                     })
 
-                        return false
+                    return false
+                })
+                $('.close a span').click(function(){
+                    $('.list_l').is('.slide').hide(1000);
+                    $('.blind').fadeOut(1000,function(){
+                        $(this).remove()
                     })
-
+                })
 
 
             })
