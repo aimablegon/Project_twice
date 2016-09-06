@@ -88,7 +88,7 @@
                 height:auto;
             }
             .contents .photo_box{
-                max-width: 1024px;
+                max-width: 1000px;
                 width: 85%;
                 margin: 0 auto;
                 position:relative;
@@ -148,9 +148,11 @@
 
             .contents .photos_large .list_large ul{
                 position:relative;
+                overflow: hidden
+
             }
             .contents .photos_large .list_large ul li{
-                display:none;
+                display: inline-block;
             }
 
             .contents .photos_large .list_large ul li img{
@@ -177,20 +179,24 @@
 
             }
 
-            .contents .list_large .prev{outline:1px #FF0 solid;
+            .contents .list_large .prev{
                 left:0;
 
 
             }
-            .contents .list_large .next{outline:1px #FF0 solid;
+            .contents .list_large .next{
                 right:0;
 
             }
             .contents .list_large .close{
                 width:100%;
+                height: 0;
 
             }
-            .contents .list_large .btn span{outline:1px #FF0 solid;
+            .contents .list_large .close a{
+                height:0;
+            }
+            .contents .list_large .btn span{
                 background-image:url(images/modal_icon.png);
                 width: 36px;
                 height: 34px;
@@ -198,24 +204,25 @@
                 top:45%;
 
             }
-            .contents .list_large .prev span{outline:1px #F00 solid;
+            .contents .list_large .prev span{
                 background-position:0 -36px;
                 background-repeat:no-repeat;
-                left: 20%;
+                left: 25%;
                 display:none;
             }
-            .contents .list_large .next span{outline:1px #F00 solid;
+            .contents .list_large .next span{
                 background-position:0 -72px;
                 background-repeat:no-repeat;
-                right: 20%;
+                right: 25%;
                 display: none;
             }
-            .contents .list_large .close span{outline:1px #F00 solid;
-                background-position:0 0
+            .contents .list_large .close span{
+                background-position:0 0;
                 background-repeat:no-repeat;
                 height: 36px;
                 top:-18px;
                 right:-18px;
+
             }
 
             /*content 끝*/
@@ -568,8 +575,12 @@
 
                 $('.photos .list_s a').click(function(){
                     $('#img').attr('id','');
+
                     var list_idx =$(this).parent('li').index();
                     console.log(list_idx)
+                    $('.list_l li').eq(list_idx).addClass('slide')
+
+
 
                     var aa ="";
                        aa += '<div class="blind">';
@@ -597,7 +608,7 @@
                     $('.list_large ul li').eq(list_idx).find('img').attr('id','img').parent('a').parent('li').css({
                         'display':'block',
                         'position':'relative',
-                        'width': document.getElementById("img").naturalWidth,
+                        'width': document.getElementById("img").naturalWidth-30,
                         'height':document.getElementById("img").naturalHeight,
                         'z-index':100,
                         'left' : '50%',
@@ -611,7 +622,7 @@
 
 
                     $('.list_large .wrap_btn').css({
-                        'width' : document.getElementById("img").naturalWidth,
+                        'width' : document.getElementById("img").naturalWidth -30,
                         'height' : document.getElementById("img").naturalHeight,
                         'left' : '50%',
                         marginLeft : function(){
@@ -621,16 +632,74 @@
                         }
                     })
 
+
+                    //
                     $('.wrap_btn .arr a').mouseenter(function(){
+                        console.log('aa')
                          $(this).children('span').css('display','block')
 
                     }).mouseleave(function(){
                          $(this).children('span').css('display','none')
                     })
 
+                    //next버튼 클릭 슬라이드
+                    idx =0
 
-                    return false
-                })
+                    $('.next').click(function(){
+                        $('.list_l li').eq(list_idx).removeClass('slide').animate({
+                            'left':-$('.list_l li').width()
+                        }).parent().next().addClass('slide').css({
+                            'display':'block',
+                            'left':$('.list_l li').width()
+                        }).stop().animate({
+                            'left':0
+                        })
+
+
+
+                        idx++
+
+                        if(idx == $('.list_l li').length){
+                            idx = 0
+                            $('.list_l li').eq(idx).children('img').css({
+                               'left':$('.list_l li').width(),
+                               'display':'block'
+                            }).stop().animate({
+                                'left':0
+                            }).parent().addClass('slide').siblings().removeClass('slide')
+                        }
+                    })
+
+
+
+
+
+                   // 프리브 버튼을 클릭했을때, 왼쪽으로 넘어가게
+                    $('.prev').click(function(){
+                        $('.list_l li').eq(idx).removeClass('slide').animate({
+                            'left':$('.list_l li').width()
+                        }).parent().prev().addClass('slide').css({
+                            'display':'block',
+                            'left':-$('.list_l li').width()
+                        }).stop().animate({
+                            'left':0
+                        })
+
+                       idx--
+
+                       if(idx < 0){
+                            idx = $('.list_l li').length-1
+                            $('.list_l li').eq(idx).children('img').css({
+                                'left': -$('.list_l li').width(),
+                                'display':'block'
+                            }).stop().animate({
+                                'left':0
+                            }).parent().addClass('slide').siblings().removeClass('slide')
+                       }
+                    })
+
+                        return false
+                    })
 
 
 
